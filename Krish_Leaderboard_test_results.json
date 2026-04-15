@@ -1,0 +1,86 @@
+{
+  "url": "https://krish-leaderboard.onrender.com/",
+  "site_name": "Krish Leaderboard",
+  "timestamp": "2026-04-15T19:04:29.213504",
+  "summary": {
+    "total_tests": 12,
+    "passed": 9,
+    "failed": 0,
+    "warnings": 3,
+    "pass_rate": "75.0%"
+  },
+  "tests": [
+    {
+      "title": "Page loads successfully",
+      "status": "passed",
+      "duration": 3145.2975273132324,
+      "details": "Status code: 200, Load time: 3.1s"
+    },
+    {
+      "title": "Dynamic content loads",
+      "status": "passed",
+      "duration": 56.266069412231445,
+      "details": "Content loaded in 0.1s"
+    },
+    {
+      "title": "Page has a title",
+      "status": "passed",
+      "duration": 14.434814453125,
+      "details": "Title: 'WASK Leaderboard'"
+    },
+    {
+      "title": "Main heading (H1) exists",
+      "status": "passed",
+      "duration": 80.71517944335938,
+      "details": "Heading: '\ud83c\udfc6 WASK Leaderboard'"
+    },
+    {
+      "title": "Game/Score content detected",
+      "status": "passed",
+      "duration": 32.511234283447266,
+      "details": "Found: game, score, leaderboard, player"
+    },
+    {
+      "title": "Statistics/numbers displayed",
+      "status": "warning",
+      "duration": 10.189294815063477,
+      "details": "Could not detect statistics"
+    },
+    {
+      "title": "Empty state handling",
+      "status": "passed",
+      "duration": 61.4166259765625,
+      "details": "Empty state messages present"
+    },
+    {
+      "title": "Responsive design works",
+      "status": "passed",
+      "duration": 2261.962652206421,
+      "details": "Tested on 4 screen sizes"
+    },
+    {
+      "title": "No JavaScript console errors",
+      "status": "passed",
+      "duration": 2142.348051071167,
+      "details": "Clean console"
+    },
+    {
+      "title": "Good performance",
+      "status": "passed",
+      "duration": 100,
+      "details": "Fast load time: 100ms"
+    },
+    {
+      "title": "Links are present",
+      "status": "warning",
+      "duration": 20.831584930419922,
+      "details": "Found 0 links"
+    },
+    {
+      "title": "Leaderboard data structure",
+      "status": "warning",
+      "duration": 22.835731506347656,
+      "details": "No clear structure detected"
+    }
+  ]
+}
