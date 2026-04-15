@@ -1,6 +1,8 @@
 # 🎭 Playwright Test Dashboard
 
-An automated testing dashboard for the WASK Leaderboard application that generates beautiful, interactive visualizations of test results.
+An automated testing dashboard for the WASK Leaderboard application that generates beautiful, interactive visualizations of test results. 
+
+YOU CAN EASILY REPLICATE THIS FOR YOUR LEADERBOARD AND IS A REALLY ADVANCED AND NICE ADDITION FOR YOU TO DO :) IT IS KNOWN AS END TO END TESTING WHEN DONE IN YOUR CICD DEVOPS PIPELINE (CHECK YOU UNDERSTAND THIS!)
 
 ## ✨ Features
 
