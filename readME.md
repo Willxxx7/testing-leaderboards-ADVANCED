@@ -143,7 +143,7 @@ An automated testing dashboard for **any** leaderboard application (IoT Game Lea
 
 **Happy automated testing!** 🚀
 
-*Perfect for Level 3 IoT/DevOps modules at Gloucestershire College*
+*Perfect for Level 3 IoT/DevOps modules*
 
 ---
 
