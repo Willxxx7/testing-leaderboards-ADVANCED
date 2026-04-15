@@ -145,6 +145,4 @@ An automated testing dashboard for **any** leaderboard application (IoT Game Lea
 
 *Perfect for Level 3 IoT/DevOps modules*
 
----
 
-Would you like me to add badges (e.g., Python version, Playwright, CI/CD tested) or keep it classroom-focused as-is?
