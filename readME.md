@@ -1,4 +1,3 @@
-
 # 🎭 Playwright Test Dashboard
 
 An automated testing dashboard for any leaderboard application (IoT Game Leaderboards, custom leaderboards). Generates interactive visualizations of test results with detailed JSON reports.
@@ -122,7 +121,7 @@ Normal behavior: First load = 30–60s (free tier)
 Script handles: 60s timeout + networkidle wait
 Pro tip: Visit URL in browser first to "wake up" Render
 
-## 🎓 Gloucestershire College Marking
+## 🎓
 
 | Pass Rate | Grade | Notes                         |
 | --------- | ----- | ----------------------------- |
@@ -157,7 +156,7 @@ Pro tip: Visit URL in browser first to "wake up" Render
 
 **Happy automated testing! 🚀**
 
-*Perfect for Level 3 IoT/DevOps modules at Gloucestershire College*
+*Perfect for Level 3 IoT/DevOps modules* 
 
 ---
 
