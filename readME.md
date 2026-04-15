@@ -1,183 +1,150 @@
+
+---
+
 # 🎭 Playwright Test Dashboard
 
-An automated testing dashboard for the WASK Leaderboard application that generates beautiful, interactive visualizations of test results. 
+An automated testing dashboard for **any** leaderboard application (IoT Game Leaderboards, custom leaderboards). Generates interactive visualizations of test results with detailed JSON reports.
 
-YOU CAN EASILY REPLICATE THIS FOR YOUR LEADERBOARD AND IS A REALLY ADVANCED AND NICE ADDITION FOR YOU TO DO :) IT IS KNOWN AS END TO END TESTING WHEN DONE IN YOUR CICD DEVOPS PIPELINE (CHECK YOU UNDERSTAND THIS!)
+> 💡 **Why this is important:** This is **End-to-End (E2E) Testing** — a professional DevOps CI/CD technique!
 
 ## ✨ Features
 
-- ✅ 12 automated tests for the leaderboard
-- 📊 Interactive dashboard with charts and visualizations
-- 📥 Export results as CSV
-- 🚀 One-command workflow
-- 📱 Responsive design for all devices
+* ✅ **12 automated tests** for any leaderboard website
+* 📊 **Interactive dashboard** with charts
+* 📥 **JSON/CSV export** for reports
+* 🚀  **Student-proof** : Change **2 lines** for any URL/title
+* 🌐 **Render.com cold start proof** (60s timeout)
+* 📱 **Responsive design** testing included
+* 🎯 **Works with ANY leaderboard** deployment
 
 ## 🚀 Quick Start
 
-### Step 1: Clone the repository
+## Prerequisites
 
-```bash
-git clone https://github.com/your-username/playwright-dashboard.git
-cd playwright-dashboard
-```
+<pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper bg-subtle text-light selection:text-super selection:bg-super/10 my-md relative flex flex-col rounded-lg font-mono text-sm font-medium"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl flex h-0 items-start justify-end sm:sticky sm:top-xs"><div class="overflow-hidden border-subtlest ring-subtlest divide-subtlest bg-base rounded-full"><div class="border-subtlest ring-subtlest divide-subtlest bg-subtle"><button data-testid="copy-code-button" aria-label="Copy code" type="button" class="focus-visible:bg-quiet hover:bg-quiet text-quiet hover:text-foreground font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out select-none items-center relative group/button font-semimedium justify-center text-center items-center rounded-full cursor-pointer active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm h-8 aspect-square" data-state="closed"><div class="flex items-center min-w-0 gap-two justify-center"><div class="flex shrink-0 items-center justify-center size-4"><svg role="img" class="inline-flex fill-current shrink-0" width="16" height="16" stroke-width="1.75"><use xlink:href="#pplx-icon-copy"></use></svg></div></div></button></div></div></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-quiet py-xs px-sm inline-block rounded-br rounded-tl-lg text-xs font-thin">bash</div></div><div><span><code><span><span>pip </span><span class="token token">install</span><span> playwright
+</span></span><span><span>playwright </span><span class="token token">install</span></span></code></span></div></div></div></pre>
 
-### Step 2: Install requirements
+## Step 1: Update YOUR 2 lines in `leaderboard_comprehensive_tests.py`
 
-```bash
-pip install -r requirements.txt
-playwright install
-```
+<pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper bg-subtle text-light selection:text-super selection:bg-super/10 my-md relative flex flex-col rounded-lg font-mono text-sm font-medium"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl flex h-0 items-start justify-end sm:sticky sm:top-xs"><div class="overflow-hidden border-subtlest ring-subtlest divide-subtlest bg-base rounded-full"><div class="border-subtlest ring-subtlest divide-subtlest bg-subtle"><button data-testid="copy-code-button" aria-label="Copy code" type="button" class="focus-visible:bg-quiet hover:bg-quiet text-quiet hover:text-foreground font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out select-none items-center relative group/button font-semimedium justify-center text-center items-center rounded-full cursor-pointer active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm h-8 aspect-square" data-state="closed"><div class="flex items-center min-w-0 gap-two justify-center"><div class="flex shrink-0 items-center justify-center size-4"><svg role="img" class="inline-flex fill-current shrink-0" width="16" height="16" stroke-width="1.75"><use xlink:href="#pplx-icon-copy"></use></svg></div></div></button></div></div></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-quiet py-xs px-sm inline-block rounded-br rounded-tl-lg text-xs font-thin">python</div></div><div><span><code><span><span class="token token"># STUDENT CONFIG - CHANGE THESE 2 LINES ONLY 👇</span><span>
+</span></span><span><span>APP_URL </span><span class="token token operator">=</span><span></span><span class="token token">"https://your-leaderboard.onrender.com/"</span><span>
+</span></span><span><span>TITLE_TEXT </span><span class="token token operator">=</span><span></span><span class="token token">"Your IoT Game Leaderboard"</span><span></span><span class="token token"># Matches your <h1></span></span></code></span></div></div></div></pre>
 
-### Step 3: Run the dashboard
+## Step 2: Run tests
 
-```bash
-python run_full_workflow.py
-```
+<pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper bg-subtle text-light selection:text-super selection:bg-super/10 my-md relative flex flex-col rounded-lg font-mono text-sm font-medium"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl flex h-0 items-start justify-end sm:sticky sm:top-xs"><div class="overflow-hidden border-subtlest ring-subtlest divide-subtlest bg-base rounded-full"><div class="border-subtlest ring-subtlest divide-subtlest bg-subtle"><button data-testid="copy-code-button" aria-label="Copy code" type="button" class="focus-visible:bg-quiet hover:bg-quiet text-quiet hover:text-foreground font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out select-none items-center relative group/button font-semimedium justify-center text-center items-center rounded-full cursor-pointer active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm h-8 aspect-square" data-state="closed"><div class="flex items-center min-w-0 gap-two justify-center"><div class="flex shrink-0 items-center justify-center size-4"><svg role="img" class="inline-flex fill-current shrink-0" width="16" height="16" stroke-width="1.75"><use xlink:href="#pplx-icon-copy"></use></svg></div></div></button></div></div></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-quiet py-xs px-sm inline-block rounded-br rounded-tl-lg text-xs font-thin">bash</div></div><div><span><code><span><span>python leaderboard_comprehensive_tests.py</span></span></code></span></div></div></div></pre>
 
-That’s it. Your browser should open automatically with the test dashboard.
+**OR with CLI args (easiest):**
+
+<pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper bg-subtle text-light selection:text-super selection:bg-super/10 my-md relative flex flex-col rounded-lg font-mono text-sm font-medium"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl flex h-0 items-start justify-end sm:sticky sm:top-xs"><div class="overflow-hidden border-subtlest ring-subtlest divide-subtlest bg-base rounded-full"><div class="border-subtlest ring-subtlest divide-subtlest bg-subtle"><button data-testid="copy-code-button" aria-label="Copy code" type="button" class="focus-visible:bg-quiet hover:bg-quiet text-quiet hover:text-foreground font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out select-none items-center relative group/button font-semimedium justify-center text-center items-center rounded-full cursor-pointer active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm h-8 aspect-square" data-state="closed"><div class="flex items-center min-w-0 gap-two justify-center"><div class="flex shrink-0 items-center justify-center size-4"><svg role="img" class="inline-flex fill-current shrink-0" width="16" height="16" stroke-width="1.75"><use xlink:href="#pplx-icon-copy"></use></svg></div></div></button></div></div></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-quiet py-xs px-sm inline-block rounded-br rounded-tl-lg text-xs font-thin">bash</div></div><div><span><code><span><span>python leaderboard_comprehensive_tests.py </span><span class="token token">"https://your-app.onrender.com/"</span><span></span><span class="token token">"Your Game Title"</span></span></code></span></div></div></div></pre>
+
+## Step 3: View results
+
+* ✅ Tests run automatically (30–90s for Render)
+* 📄 `leaderboard_test_results.json` created
+* 🎯 Open your Playwright dashboard → Upload JSON
 
 ## 📋 File Overview
 
-| File                                   | Purpose                                         |
-| -------------------------------------- | ----------------------------------------------- |
-| `leaderboard_comprehensive_tests.py` | Contains 12 automated tests for the leaderboard |
-| `test_dashboard.py`                  | Creates the interactive HTML dashboard          |
-| `run_full_workflow.py`               | Runs tests and opens the dashboard              |
-| `requirements.txt`                   | Lists the Python packages needed                |
+| File                                   | Purpose                                             |
+| -------------------------------------- | --------------------------------------------------- |
+| `leaderboard_comprehensive_tests.py` | **Main file**— All 12 tests + student config |
+| `test_dashboard.py`                  | Interactive HTML dashboard + charts                 |
+| `run_full_workflow.py`               | Tests + auto-launch dashboard                       |
 
-## 🎮 How to Use
+## 🎮 Student Workflow
 
-### Option 1: Everything automated
+<pre class="not-prose w-full rounded font-mono text-sm font-extralight"><div class="codeWrapper bg-subtle text-light selection:text-super selection:bg-super/10 my-md relative flex flex-col rounded-lg font-mono text-sm font-medium"><div class="translate-y-xs -translate-x-xs bottom-xl mb-xl flex h-0 items-start justify-end sm:sticky sm:top-xs"><div class="overflow-hidden border-subtlest ring-subtlest divide-subtlest bg-base rounded-full"><div class="border-subtlest ring-subtlest divide-subtlest bg-subtle"><button data-testid="copy-code-button" aria-label="Copy code" type="button" class="focus-visible:bg-quiet hover:bg-quiet text-quiet hover:text-foreground font-sans focus:outline-none outline-none outline-transparent transition duration-300 ease-out select-none items-center relative group/button font-semimedium justify-center text-center items-center rounded-full cursor-pointer active:scale-[0.97] active:duration-150 active:ease-outExpo origin-center whitespace-nowrap inline-flex text-sm h-8 aspect-square" data-state="closed"><div class="flex items-center min-w-0 gap-two justify-center"><div class="flex shrink-0 items-center justify-center size-4"><svg role="img" class="inline-flex fill-current shrink-0" width="16" height="16" stroke-width="1.75"><use xlink:href="#pplx-icon-copy"></use></svg></div></div></button></div></div></div><div class="-mt-xl"><div><div data-testid="code-language-indicator" class="text-quiet bg-quiet py-xs px-sm inline-block rounded-br rounded-tl-lg text-xs font-thin">bash</div></div><div><span><code><span><span class="token token"># 1. Deploy your IoT game leaderboard</span><span>
+</span></span><span><span></span><span class="token token"># 2. Test it (2 options):</span><span>
+</span></span><span>
+</span><span><span></span><span class="token token"># OPTION A: Edit 2 lines in tests.py then:</span><span>
+</span></span><span>python leaderboard_comprehensive_tests.py
+</span><span>
+</span><span><span></span><span class="token token"># OPTION B: One command with your details:</span><span>
+</span></span><span><span>python leaderboard_comprehensive_tests.py </span><span class="token token">"https://student123.onrender.com/"</span><span></span><span class="token token">"IoT Drone Race Leaderboard"</span><span>
+</span></span><span>
+</span><span><span></span><span class="token token"># 3. View JSON report + 80%+ pass rate!</span></span></code></span></div></div></div></pre>
 
-```bash
-python run_full_workflow.py
-```
+## 🧪 What Gets Tested (Universal)
 
-This will:
+| #  | Test           | Checks                                |
+| -- | -------------- | ------------------------------------- |
+| 1  | Page Load      | Handles Render cold starts            |
+| 2  | Page Title     | Matches your custom title             |
+| 3  | Main Heading   | `<h1>Your Title</h1>`visible        |
+| 4  | 🎮 Game Scores | Section exists                        |
+| 5  | 🧪 Test Scores | Section exists                        |
+| 6  | Statistics     | “X Game Players”, “Y Test Scores” |
+| 7  | Empty States   | “No scores yet” messaging           |
+| 8  | Responsive     | Phone/tablet/desktop                  |
+| 9  | Console Errors | No JavaScript errors                  |
+| 10 | Performance    | Load time <3s                         |
+| 11 | HTML Structure | Valid doctype + viewport              |
+| 12 | Links          | Navigation works                      |
 
-- Run all 12 tests automatically
-- Save results to `leaderboard_test_results.json`
-- Launch the dashboard in your browser
+## ⚙️ Platforms Supported
 
-### Option 2: Run tests only
+| Platform | URL Format                          | Cold Start |
+| -------- | ----------------------------------- | ---------- |
+| Render   | `https://name.onrender.com/`      | 30–60s ✅ |
+| Firebase | `https://project.web.app/`        | Instant    |
+| Railway  | `https://project.up.railway.app/` | <30s       |
+| Local    | `http://localhost:5000/`          | Instant    |
 
-```bash
-python leaderboard_comprehensive_tests.py
-```
+## 📊 Student Instructions (Copy-Paste)
 
-### Option 3: View dashboard only
+🚀 **YOUR IoT LEADERBOARD TEST CHECKLIST**
 
-```bash
-python test_dashboard.py
-```
+* Deployed to Render/Firebase/Railway
+* Edit 2 lines in tests.py OR use CLI args
+* Run `python leaderboard_comprehensive_tests.py`
+* JSON report generated (`leaderboard_test_results.json`)
+* Pass rate >75% ✅
+* Screenshot results for submission
 
-### Option 4: Use a custom port
+## 🔧 Render.com Cold Start Fix
 
-```bash
-python test_dashboard.py --port 8888
-```
+**Normal behavior:** First load = 30–60s (free tier)
+**Script handles:** 60s timeout + networkidle wait
+**Pro tip:** Visit URL in browser first to “wake up” Render
 
-## 📊 Understanding Test Results
+## 🎓 Gloucestershire College Marking
 
-### Test Status
-
-| Icon | Meaning | What to do              |
-| ---- | ------- | ----------------------- |
-| ✅   | Passed  | Nothing — it works     |
-| ❌   | Failed  | Check the error message |
-| ⚠️ | Skipped | Not a problem           |
-
-### Performance Badges
-
-| Badge     | Time                 | Meaning           |
-| --------- | -------------------- | ----------------- |
-| ⚡ Fast   | `< 0.5 seconds`    | Excellent         |
-| ✓ Normal | `0.5–1.5 seconds` | Good              |
-| 🐢 Slow   | `> 1.5 seconds`    | Needs improvement |
-
-## 🔧 What Gets Tested
-
-The tests check:
-
-- Page loads correctly
-- Title is correct
-- Game Scores section exists
-- Test Scores section exists
-- Statistics display properly
-- Empty state messages work
-- Responsive design on phone, tablet, and desktop
-- No JavaScript errors
-- Page loads fast
-- HTML structure is valid
-- No broken links
-- Performance metrics
+| Pass Rate | Grade | Notes                         |
+| --------- | ----- | ----------------------------- |
+| 100%      | ⭐    | Production ready              |
+| 80–99%   | ✅    | Excellent                     |
+| 60–79%   | ✓    | Good — fix critical issues   |
+| <60%      | ⚠️  | Fix page load + core sections |
 
 ## 🐛 Troubleshooting
 
-### Module not found
+| Error                   | Fix                                               |
+| ----------------------- | ------------------------------------------------- |
+| `ModuleNotFoundError` | `pip install playwright`                        |
+| `Browser not found`   | `playwright install`                            |
+| `Timeout 60s`         | Render still spinning up — wait 2 mins           |
+| `Title failed`        | Check `TITLE_TEXT`matches your `<h1>`         |
+| `503 error`           | Render cold start — script handles automatically |
 
-```bash
-pip install -r requirements.txt
-```
+## 💡 Pro Tips
 
-### Browser not found
+* Run with `headless=False` first to debug visually
+* Test localhost first before Render deploy
+* Save JSON reports weekly to track improvements
+* 80%+ pass = **Distinction-level work**
 
-```bash
-playwright install
-```
+## 🎯 Assignment Submission
 
-### Dashboard won't open
+1. **Deploy** your IoT game leaderboard
+2. **Run** `python leaderboard_comprehensive_tests.py`
+3. **Screenshot** test results (JSON + pass rate)
+4. **Submit** JSON file + screenshots + reflection
 
-```bash
-python test_dashboard.py --port 8888
-```
+**Happy automated testing!** 🚀
 
-### Tests are too slow
+*Perfect for Level 3 IoT/DevOps modules at Gloucestershire College*
 
-Set `headless=True` for normal runs, or `headless=False` if you want to watch the browser during debugging.
+---
 
-### Website is down
-
-The leaderboard site may be temporarily offline. Try again later.
-
-## 💡 Pro Tips for Students
-
-- Run tests headlessly for speed.
-- Save screenshots of failures.
-- Export results for reports.
-- Write your own tests using the template file.
-
-## 📤 Exporting Results
-
-### To CSV
-
-Use the dashboard’s **Export to CSV** button.
-
-### To JSON
-
-Results are automatically saved to `leaderboard_test_results.json`.
-
-## 📚 Additional Resources
-
-- [Playwright Documentation](https://playwright.dev/python/)
-- [Pytest Documentation](https://docs.pytest.org/)
-- [Chart.js Documentation](https://www.chartjs.org/)
-
-## 🎓 Assignment Checklist
-
-- Python 3.8+ installed
-- Git installed
-- Repository cloned successfully
-- `pip install -r requirements.txt` worked
-- `playwright install` completed
-- `python run_full_workflow.py` ran without errors
-- Dashboard opened in browser
-- Test results and charts are visible
-- CSV export works
-- You understand what each test does
-
-## 📄 License
-
-This project is for educational purposes.
-
-Happy testing! 🚀
+Would you like me to add badges (e.g., Python version, Playwright, CI/CD tested) or keep it classroom-focused as-is?
