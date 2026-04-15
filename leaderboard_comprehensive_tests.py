@@ -2,6 +2,7 @@ from playwright.sync_api import sync_playwright, expect
 import json
 import time
 import re
+import math
 
 def run_comprehensive_tests():
     with sync_playwright() as p:

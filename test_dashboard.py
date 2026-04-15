@@ -38,10 +38,20 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
                 for spec in suite['specs']:
                     if 'tests' in spec:
                         for test in spec['tests']:
+                            # Handle different possible field names
+                            test_name = test.get('title') or test.get('name', 'Unnamed Test')
+                            status = test.get('status', 'unknown')
+                            duration_ms = test.get('duration', 0)
+                            # Convert to seconds if it's in milliseconds (likely > 100)
+                            if duration_ms > 100:
+                                duration_sec = duration_ms / 1000
+                            else:
+                                duration_sec = duration_ms
+                            
                             tests.append({
-                                'name': test.get('title', 'Unnamed Test'),
-                                'status': test.get('status', 'unknown'),
-                                'duration': test.get('duration', 0) / 1000,  # Convert to seconds
+                                'name': test_name,
+                                'status': status,
+                                'duration': duration_sec,
                                 'file': spec.get('file', 'unknown')
                             })
     
@@ -60,7 +70,33 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
     else:
         slowest_test = fastest_test = {'name': 'N/A', 'duration': 0}
     
-    # Generate HTML
+    # Generate table rows
+    table_rows = []
+    for test in tests:
+        status_class = "status-passed" if test['status'] == 'passed' else "status-failed"
+        status_text = "✅ Passed" if test['status'] == 'passed' else "❌ Failed"
+        
+        # Determine performance badge
+        if test['duration'] < 0.5:
+            performance = "⚡ Fast"
+        elif test['duration'] < 1.5:
+            performance = "✓ Normal"
+        else:
+            performance = "🐢 Slow"
+        
+        table_rows.append(f"""
+        <tr>
+            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">{test['name'][:60]}</td>
+            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;"><span class="status-badge {status_class}">{status_text}</span></td>
+            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">{test['duration']:.2f}s</td>
+            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">{test['file']}</td>
+            <td style="padding: 12px; border-bottom: 1px solid #e0e0e0;">{performance}</td>
+        </tr>
+        """)
+    
+    table_html = '\n'.join(table_rows) if table_rows else '<tr><td colspan="5" style="text-align:center; padding: 20px;">No test results found</td></tr>'
+    
+    # Generate HTML content without using f-strings for JavaScript
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -170,6 +206,7 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
         }}
         
         .chart-box h3 {{
@@ -314,6 +351,7 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
             <div class="chart-box">
                 <h3>📈 Pass Rate Gauge</h3>
                 <canvas id="gaugeChart"></canvas>
+                <div id="gaugeCenterText" style="position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); font-size: 28px; font-weight: bold; color: #28a745; pointer-events: none;">{pass_rate:.0f}%</div>
             </div>
             <div class="chart-box">
                 <h3>🏆 Performance Highlights</h3>
@@ -339,13 +377,13 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
                     </tr>
                 </thead>
                 <tbody>
-                    {generate_table_rows(tests)}
+                    {table_html}
                 </tbody>
             </table>
         </div>
         
         <div class="button-group">
-            <button class="btn" onclick="window.location.reload()">🔄 Refresh Data</button>
+            <button class="btn" onclick="location.reload()">🔄 Refresh Data</button>
             <button class="btn" onclick="exportToCSV()">📥 Export to CSV</button>
         </div>
         
@@ -408,7 +446,7 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
                 plugins: {{
                     tooltip: {{
                         callbacks: {{
-                            label: (ctx) => `${{ctx.raw.toFixed(2)}} seconds`
+                            label: (ctx) => ctx.raw.toFixed(2) + ' seconds'
                         }}
                     }}
                 }}
@@ -435,27 +473,13 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
                 plugins: {{
                     tooltip: {{
                         callbacks: {{
-                            label: (ctx) => `${{ctx.label}}: ${{ctx.raw.toFixed(1)}}%`
+                            label: (ctx) => ctx.label + ': ' + ctx.raw.toFixed(1) + '%'
                         }}
                     }},
                     legend: {{ position: 'bottom' }}
                 }}
             }}
         }});
-        
-        // Add center text to gauge
-        const gaugeContainer = document.getElementById('gaugeChart').parentElement;
-        const centerText = document.createElement('div');
-        centerText.style.position = 'absolute';
-        centerText.style.top = '50%';
-        centerText.style.left = '50%';
-        centerText.style.transform = 'translate(-50%, -50%)';
-        centerText.style.fontSize = '24px';
-        centerText.style.fontWeight = 'bold';
-        centerText.style.color = '#28a745';
-        centerText.textContent = `${Math.round(passRate)}%`;
-        gaugeContainer.style.position = 'relative';
-        gaugeContainer.appendChild(centerText);
         
         // Export to CSV function
         function exportToCSV() {{
@@ -478,33 +502,6 @@ def create_dashboard_html(test_results_file='leaderboard_test_results.json'):
 </html>"""
     
     return html_content
-
-def generate_table_rows(tests):
-    """Generate HTML table rows from test data"""
-    rows = []
-    for test in tests:
-        status_class = "status-passed" if test['status'] == 'passed' else "status-failed"
-        status_text = "✅ Passed" if test['status'] == 'passed' else "❌ Failed"
-        
-        # Determine performance badge
-        if test['duration'] < 0.5:
-            performance = "⚡ Fast"
-        elif test['duration'] < 1.5:
-            performance = "✓ Normal"
-        else:
-            performance = "🐢 Slow"
-        
-        rows.append(f"""
-        <tr>
-            <td>{test['name'][:60]}</td>
-            <td><span class="status-badge {status_class}">{status_text}</span></td>
-            <td>{test['duration']:.2f}s</td>
-            <td>{test['file']}</td>
-            <td>{performance}</td>
-        </tr>
-        """)
-    
-    return '\n'.join(rows)
 
 def create_sample_data():
     """Create sample test data for demonstration"""
@@ -529,6 +526,11 @@ def run_dashboard(test_results_file='leaderboard_test_results.json', port=8000):
     print("🎭 Starting Playwright Test Dashboard...")
     print("=" * 50)
     
+    # Check if results file exists
+    if not os.path.exists(test_results_file):
+        print(f"⚠️ Warning: {test_results_file} not found")
+        print("📝 Creating sample data for demonstration...")
+    
     # Create HTML content
     html_content = create_dashboard_html(test_results_file)
     
@@ -537,37 +539,26 @@ def run_dashboard(test_results_file='leaderboard_test_results.json', port=8000):
         return
     
     # Create temporary HTML file
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as f:
+    temp_file = os.path.join(tempfile.gettempdir(), 'playwright_dashboard.html')
+    with open(temp_file, 'w', encoding='utf-8') as f:
         f.write(html_content)
-        temp_file = f.name
     
     print(f"✅ Dashboard created at: {temp_file}")
-    print(f"🌐 Starting web server on port {port}...")
+    print(f"🌐 Opening dashboard in your browser...")
     
-    # Change to temp file directory
-    os.chdir(os.path.dirname(temp_file))
+    # Open in browser
+    webbrowser.open(f'file://{temp_file}')
     
-    # Start HTTP server
-    handler = SimpleHTTPRequestHandler
-    httpd = HTTPServer(('localhost', port), handler)
+    print(f"📊 Dashboard opened successfully!")
+    print("💡 Press Ctrl+C in terminal to stop the server (if running)")
     
-    # Open browser
-    url = f'http://localhost:{port}/{os.path.basename(temp_file)}'
-    webbrowser.open(url)
-    
-    print(f"📊 Dashboard available at: {url}")
-    print("Press Ctrl+C to stop the server")
-    
+    # Keep the script running (optional)
     try:
-        httpd.serve_forever()
+        while True:
+            import time
+            time.sleep(1)
     except KeyboardInterrupt:
-        print("\n👋 Shutting down dashboard...")
-        httpd.shutdown()
-        # Clean up temp file
-        try:
-            os.unlink(temp_file)
-        except:
-            pass
+        print("\n👋 Dashboard closed")
 
 def update_test_results():
     """Run the comprehensive test suite to update results"""
@@ -576,7 +567,6 @@ def update_test_results():
     
     # Import and run the test suite
     try:
-        # This imports your test file - make sure it's in the same directory
         import leaderboard_comprehensive_tests
         leaderboard_comprehensive_tests.run_comprehensive_tests()
         print("✅ Test results updated successfully!")
@@ -607,14 +597,7 @@ Playwright Test Dashboard - Usage:
     
 Options:
     --update    : Run the comprehensive test suite before starting dashboard
-    --port N    : Specify port number (default: 8000)
             """)
-        elif sys.argv[1] == '--port' and len(sys.argv) > 2:
-            try:
-                port = int(sys.argv[2])
-                run_dashboard(port=port)
-            except ValueError:
-                print("❌ Invalid port number")
         else:
             run_dashboard()
     else:

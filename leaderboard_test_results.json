@@ -8,132 +8,132 @@
             {
               "title": "Page loads successfully",
               "status": "passed",
-              "duration": 3488.420009613037,
+              "duration": 739.8099899291992,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 3488.420009613037
+                  "duration": 739.8099899291992
                 }
               ]
             },
             {
               "title": "Correct page title",
               "status": "passed",
-              "duration": 12.04681396484375,
+              "duration": 12.860774993896484,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 12.04681396484375
+                  "duration": 12.860774993896484
                 }
               ]
             },
             {
               "title": "Main heading displayed",
               "status": "passed",
-              "duration": 73.10676574707031,
+              "duration": 58.7005615234375,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 73.10676574707031
+                  "duration": 58.7005615234375
                 }
               ]
             },
             {
               "title": "Game Scores section present",
               "status": "passed",
-              "duration": 10.57744026184082,
+              "duration": 12.293815612792969,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 10.57744026184082
+                  "duration": 12.293815612792969
                 }
               ]
             },
             {
               "title": "Test Scores section present",
               "status": "passed",
-              "duration": 10.658740997314453,
+              "duration": 11.03067398071289,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 10.658740997314453
+                  "duration": 11.03067398071289
                 }
               ]
             },
             {
               "title": "Statistics dashboard visible",
               "status": "failed",
-              "duration": 24.11365509033203,
+              "duration": 24.467945098876953,
               "results": [
                 {
                   "status": "failed",
-                  "duration": 24.11365509033203
+                  "duration": 24.467945098876953
                 }
               ]
             },
             {
               "title": "Empty state messages displayed",
               "status": "passed",
-              "duration": 16.356945037841797,
+              "duration": 10.961055755615234,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 16.356945037841797
+                  "duration": 10.961055755615234
                 }
               ]
             },
             {
               "title": "Responsive design works",
               "status": "passed",
-              "duration": 2080.7178020477295,
+              "duration": 2090.0003910064697,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 2080.7178020477295
+                  "duration": 2090.0003910064697
                 }
               ]
             },
             {
               "title": "No JavaScript console errors",
               "status": "passed",
-              "duration": 1110.1689338684082,
+              "duration": 1093.2948589324951,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 1110.1689338684082
+                  "duration": 1093.2948589324951
                 }
               ]
             },
             {
               "title": "Performance within acceptable range",
               "status": "passed",
-              "duration": 87,
+              "duration": 74,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 87
+                  "duration": 74
                 }
               ]
             },
             {
               "title": "Valid HTML structure",
               "status": "passed",
-              "duration": 46.3109016418457,
+              "duration": 55.27949333190918,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 46.3109016418457
+                  "duration": 55.27949333190918
                 }
               ]
             },
             {
               "title": "Links validation (0 links found)",
               "status": "passed",
-              "duration": 14.520645141601562,
+              "duration": 10.526895523071289,
               "results": [
                 {
                   "status": "passed",
-                  "duration": 14.520645141601562
+                  "duration": 10.526895523071289
                 }
               ]
             }
