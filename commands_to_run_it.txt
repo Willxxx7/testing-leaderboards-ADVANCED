@@ -1,0 +1,11 @@
+# Option A: Just view existing results
+python test_dashboard.py
+
+# Option B: Run tests first, then dashboard
+python test_dashboard.py --update
+
+# Option C: Use the complete workflow script
+python run_full_workflow.py
+
+# Option D: Specify a custom port
+python test_dashboard.py --port 8888

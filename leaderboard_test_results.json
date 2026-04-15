@@ -1,0 +1,145 @@
+{
+  "suites": [
+    {
+      "specs": [
+        {
+          "file": "leaderboard_comprehensive_tests.py",
+          "tests": [
+            {
+              "title": "Page loads successfully",
+              "status": "passed",
+              "duration": 3488.420009613037,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 3488.420009613037
+                }
+              ]
+            },
+            {
+              "title": "Correct page title",
+              "status": "passed",
+              "duration": 12.04681396484375,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 12.04681396484375
+                }
+              ]
+            },
+            {
+              "title": "Main heading displayed",
+              "status": "passed",
+              "duration": 73.10676574707031,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 73.10676574707031
+                }
+              ]
+            },
+            {
+              "title": "Game Scores section present",
+              "status": "passed",
+              "duration": 10.57744026184082,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 10.57744026184082
+                }
+              ]
+            },
+            {
+              "title": "Test Scores section present",
+              "status": "passed",
+              "duration": 10.658740997314453,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 10.658740997314453
+                }
+              ]
+            },
+            {
+              "title": "Statistics dashboard visible",
+              "status": "failed",
+              "duration": 24.11365509033203,
+              "results": [
+                {
+                  "status": "failed",
+                  "duration": 24.11365509033203
+                }
+              ]
+            },
+            {
+              "title": "Empty state messages displayed",
+              "status": "passed",
+              "duration": 16.356945037841797,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 16.356945037841797
+                }
+              ]
+            },
+            {
+              "title": "Responsive design works",
+              "status": "passed",
+              "duration": 2080.7178020477295,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 2080.7178020477295
+                }
+              ]
+            },
+            {
+              "title": "No JavaScript console errors",
+              "status": "passed",
+              "duration": 1110.1689338684082,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 1110.1689338684082
+                }
+              ]
+            },
+            {
+              "title": "Performance within acceptable range",
+              "status": "passed",
+              "duration": 87,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 87
+                }
+              ]
+            },
+            {
+              "title": "Valid HTML structure",
+              "status": "passed",
+              "duration": 46.3109016418457,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 46.3109016418457
+                }
+              ]
+            },
+            {
+              "title": "Links validation (0 links found)",
+              "status": "passed",
+              "duration": 14.520645141601562,
+              "results": [
+                {
+                  "status": "passed",
+                  "duration": 14.520645141601562
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
