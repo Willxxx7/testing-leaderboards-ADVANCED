@@ -1,0 +1,74 @@
+{
+  "url": "https://iot-cyber-gamev2.onrender.com/",
+  "site_name": "Iot Cyber Gamev2",
+  "timestamp": "2026-04-15T19:33:03.008392",
+  "summary": {
+    "total_tests": 10,
+    "passed": 8,
+    "failed": 0,
+    "warnings": 2,
+    "pass_rate": "80.0%"
+  },
+  "tests": [
+    {
+      "title": "Page loads successfully",
+      "status": "passed",
+      "duration": 1508.9361667633057,
+      "details": "Status code: 200"
+    },
+    {
+      "title": "Page has a title",
+      "status": "passed",
+      "duration": 18.365859985351562,
+      "details": "Title: 'Arcade Leaderboard'"
+    },
+    {
+      "title": "Main heading (H1) exists",
+      "status": "passed",
+      "duration": 83.53877067565918,
+      "details": "Heading: '\ud83c\udfc6 ARCADE LEADERBOARD \ud83d\udd79\ufe0f'"
+    },
+    {
+      "title": "Game/Score content detected",
+      "status": "passed",
+      "duration": 30.678749084472656,
+      "details": "Found: score, leaderboard, lists"
+    },
+    {
+      "title": "Statistics/numbers displayed",
+      "status": "warning",
+      "duration": 7.602453231811523,
+      "details": "Could not detect statistics"
+    },
+    {
+      "title": "Responsive design works",
+      "status": "passed",
+      "duration": 1086.9934558868408,
+      "details": "Tested on 4 screen sizes"
+    },
+    {
+      "title": "No JavaScript console errors",
+      "status": "passed",
+      "duration": 1146.5132236480713,
+      "details": "Clean console"
+    },
+    {
+      "title": "Good performance",
+      "status": "passed",
+      "duration": 110,
+      "details": "Fast load time: 110ms"
+    },
+    {
+      "title": "Links are present",
+      "status": "warning",
+      "duration": 49.15571212768555,
+      "details": "Found 0 links"
+    },
+    {
+      "title": "Leaderboard data structure",
+      "status": "passed",
+      "duration": 80.36613464355469,
+      "details": "Found: 1 list(s)"
+    }
+  ]
+}

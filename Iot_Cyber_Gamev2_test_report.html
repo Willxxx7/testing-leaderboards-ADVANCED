@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard Test Results - Iot Cyber Gamev2</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .summary-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .passed .summary-number { color: #28a745; }
+        .failed .summary-number { color: #dc3545; }
+        .warnings .summary-number { color: #ffc107; }
+        .rate .summary-number { color: #17a2b8; }
+        .tests {
+            padding: 30px;
+        }
+        .test-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+        .test-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .test-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .status-passed {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-failed {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .status-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .test-details {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 IoT Game Leaderboard Test Report</h1>
+            <p>Tested: Iot Cyber Gamev2</p>
+            <p>URL: https://iot-cyber-gamev2.onrender.com/</p>
+            <p>Date: 2026-04-15T19:33:03.008392</p>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card passed">
+                <div class="summary-label">✅ Passed Tests</div>
+                <div class="summary-number">8</div>
+                <div class="summary-label">out of 10</div>
+            </div>
+            <div class="summary-card failed">
+                <div class="summary-label">❌ Failed Tests</div>
+                <div class="summary-number">0</div>
+            </div>
+            <div class="summary-card warnings">
+                <div class="summary-label">⚠️ Warnings</div>
+                <div class="summary-number">2</div>
+            </div>
+            <div class="summary-card rate">
+                <div class="summary-label">📈 Pass Rate</div>
+                <div class="summary-number">80.0%</div>
+            </div>
+        </div>
+        
+        <div class="tests">
+            <h2>📋 Detailed Test Results</h2>
+            
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Page loads successfully</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 1509ms<br>
+                <strong>Details:</strong> Status code: 200
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Page has a title</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 18ms<br>
+                <strong>Details:</strong> Title: 'Arcade Leaderboard'
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Main heading (H1) exists</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 84ms<br>
+                <strong>Details:</strong> Heading: '🏆 ARCADE LEADERBOARD 🕹️'
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Game/Score content detected</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 31ms<br>
+                <strong>Details:</strong> Found: score, leaderboard, lists
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Statistics/numbers displayed</div>
+                <div class="status status-warning">WARNING</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 8ms<br>
+                <strong>Details:</strong> Could not detect statistics
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Responsive design works</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 1087ms<br>
+                <strong>Details:</strong> Tested on 4 screen sizes
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 No JavaScript console errors</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 1147ms<br>
+                <strong>Details:</strong> Clean console
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Good performance</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 110ms<br>
+                <strong>Details:</strong> Fast load time: 110ms
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Links are present</div>
+                <div class="status status-warning">WARNING</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 49ms<br>
+                <strong>Details:</strong> Found 0 links
+            </div>
+        </div>
+        
+
+        <div class="test-item">
+            <div class="test-header">
+                <div class="test-title">📌 Leaderboard data structure</div>
+                <div class="status status-passed">PASSED</div>
+            </div>
+            <div class="test-details">
+                <strong>Duration:</strong> 80ms<br>
+                <strong>Details:</strong> Found: 1 list(s)
+            </div>
+        </div>
+        
+        </div>
+        
+        <div class="footer">
+            <p>💡 Run the test tool again after making improvements to see your progress!</p>
+            <p>🔧 Generated by IoT Game Leaderboard Testing Tool</p>
+        </div>
+    </div>
+</body>
+</html>
